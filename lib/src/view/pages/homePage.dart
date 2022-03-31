@@ -119,6 +119,10 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 75.0,
               ),
+              Text(
+                'Today',
+                style: style.style5,
+              ),
               if (isData)
                 Text(
                   location.consolidatedWeather[0].weatherStateName,
@@ -168,16 +172,8 @@ class _HomePageState extends State<HomePage> {
     DateTime now = DateTime.now();
     DateTime date1 = DateTime(now.year, now.month, now.day + 1);
     DateTime date2 = DateTime(now.year, now.month, now.day + 2);
-    DateTime date3 = DateTime(
-      now.year,
-      now.month,
-      now.day + 3,
-    );
-    DateTime date4 = DateTime(
-      now.year,
-      now.month,
-      now.day + 4,
-    );
+    DateTime date3 = DateTime(now.year, now.month, now.day + 3);
+    DateTime date4 = DateTime(now.year, now.month, now.day + 4);
 
     return Container(
       padding: const EdgeInsets.all(15.0),
@@ -227,7 +223,11 @@ class _HomePageState extends State<HomePage> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          formatDate(time, ["D"]),
+          formatDate(
+            time,
+            ["D"],
+            //locale: const SpanishDateLocale(),
+          ),
           style: style.style5,
         ),
         const SizedBox(
@@ -236,10 +236,12 @@ class _HomePageState extends State<HomePage> {
         SizedBox(
           width: 30,
           height: 30,
-          child: Image(
-              image: NetworkImage(urlImage +
-                  location.consolidatedWeather[index].weatherStateAbbr +
-                  ".png")),
+          child: FadeInImage(
+            placeholder: const AssetImage('images/loading.gif'),
+            image: NetworkImage(urlImage +
+                location.consolidatedWeather[index].weatherStateAbbr +
+                ".png"),
+          ),
         ),
         const SizedBox(
           height: 5.0,

@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate
         ],
         supportedLocales: const [
-          Locale('en', 'US'), // Inglés
           Locale('es', 'ES'), // Español
         ],
         debugShowCheckedModeBanner: false,
