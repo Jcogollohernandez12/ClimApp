@@ -58,6 +58,9 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.10,
                 ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.04,
+                ),
                 isData ? _anotherInfo() : _emptyContainer(),
               ],
             ),
@@ -134,16 +137,18 @@ class _HomePageState extends State<HomePage> {
                   style: style.style2,
                 ),
               SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.15,
-                  height: MediaQuery.of(context).size.width * 0.15,
-                  child: isData
-                      ? Image(
-                          image: NetworkImage(urlImage +
-                              location.consolidatedWeather[0].weatherStateAbbr +
-                              ".png"))
-                      : const Image(
-                          image: AssetImage("images/sun.png"),
-                        )),
+                width: MediaQuery.of(context).size.width * 0.15,
+                height: MediaQuery.of(context).size.width * 0.15,
+                child: isData
+                    ? Image(
+                        image: NetworkImage(urlImage +
+                            location.consolidatedWeather[0].weatherStateAbbr +
+                            ".png"),
+                      )
+                    : const Image(
+                        image: AssetImage("images/sun.png"),
+                      ),
+              ),
             ],
           ),
         ],
@@ -176,26 +181,29 @@ class _HomePageState extends State<HomePage> {
     DateTime date4 = DateTime(now.year, now.month, now.day + 4);
 
     return Container(
-      padding: const EdgeInsets.all(15.0),
-      margin: const EdgeInsets.only(top: 20.0),
-      height: MediaQuery.of(context).size.height * 0.3,
-      width: MediaQuery.of(context).size.width * 0.90,
-      decoration: const BoxDecoration(
-        color: Color.fromRGBO(0, 90, 167, 0.6),
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30), bottomRight: Radius.circular(30.0)),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _nextDays(date1, 1),
-          _nextDays(date2, 2),
-          _nextDays(date3, 3),
-          _nextDays(date4, 4),
-        ],
-      ),
-    );
+        padding: const EdgeInsets.all(15.0),
+        margin: const EdgeInsets.only(top: 20.0),
+        height: MediaQuery.of(context).size.height * 0.3,
+        width: MediaQuery.of(context).size.width * 0.90,
+        decoration: const BoxDecoration(
+          color: Color.fromRGBO(0, 90, 167, 0.6),
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30), bottomRight: Radius.circular(30.0)),
+        ),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _nextDays(date1, 1),
+                _nextDays(date2, 2),
+                _nextDays(date3, 3),
+                _nextDays(date4, 4),
+              ],
+            ),
+          ],
+        ));
   }
 
 //metodo que construye el widget que contiene los datos del pais o ciudad buscados (Vacio)
