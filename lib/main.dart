@@ -1,3 +1,4 @@
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:weather/src/services/weatherService.dart';
 import 'package:weather/src/view/pages/homePage.dart';
 import 'package:easy_splash_screen/easy_splash_screen.dart';
@@ -16,13 +17,28 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => WeatherService()),
       ],
       child: MaterialApp(
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          // GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate
+        ],
+        supportedLocales: const [
+          Locale('en', 'US'), // Inglés
+          Locale('es', 'ES'), // Español
+        ],
         debugShowCheckedModeBanner: false,
         title: 'Material App',
         home: EasySplashScreen(
           logo: const Image(image: AssetImage("images/fond.png")),
+          backgroundColor: Colors.blue.shade800,
           logoSize: 300,
           navigator: const HomePage(),
-          loadingText: const Text("Cargando..."),
+          loadingText: const Text(
+            "Cargando...",
+            style: TextStyle(
+              fontSize: 27,
+            ),
+          ),
         ),
       ),
     );
