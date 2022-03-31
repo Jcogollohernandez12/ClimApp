@@ -38,7 +38,6 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   location = res;
                   isData = true;
-                  //
                 });
               }
             },
