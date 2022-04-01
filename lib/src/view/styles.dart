@@ -13,7 +13,7 @@ TextStyle style3 = const TextStyle(
 
 TextStyle style4 = const TextStyle(
     fontSize: 40.0,
-    color: Color.fromRGBO(242, 202, 24, 100),
+    color: Color.fromARGB(255, 250, 115, 4),
     fontFamily: "alpha2");
 
 TextStyle style5 = const TextStyle(

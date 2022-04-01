@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.white10,
         title: Text(
           "ClimApp",
           style: style.style4,
@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
               }
             },
             icon: const Icon(Icons.search),
-            color: Colors.black,
+            color: const Color.fromARGB(255, 250, 115, 4),
           )
         ],
       ),
@@ -56,10 +56,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 _initialInfo(),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.10,
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.08,
                 ),
                 isData ? _anotherInfo() : _emptyContainer(),
               ],
@@ -70,9 +67,17 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+//metodo que muestra la parte del dia de hoy del clima
   Widget _initialInfo() {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+    return Card(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(60),
+          bottomRight: Radius.circular(60.0),
+        ),
+      ),
+      color: Colors.transparent,
+      margin: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 70.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -212,14 +217,14 @@ class _HomePageState extends State<HomePage> {
       height: MediaQuery.of(context).size.height * 0.3,
       width: MediaQuery.of(context).size.width * 0.90,
       decoration: const BoxDecoration(
-        color: Color.fromRGBO(0, 90, 167, 0.6),
+        color: Color.fromARGB(153, 110, 44, 58),
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30), bottomRight: Radius.circular(30.0)),
       ),
       child: Center(
         child: Text(
           "Next days",
-          style: style.style2,
+          style: style.style4,
         ),
       ),
     );
