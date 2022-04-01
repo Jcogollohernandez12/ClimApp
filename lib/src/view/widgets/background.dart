@@ -9,7 +9,7 @@ class Background extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       child: Image(
-        image: AssetImage("images/fondo.jpg"),
+        image: AssetImage("assets/fondo.jpg"),
         fit: BoxFit.fill,
       ),
     );
