@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Material App',
         home: EasySplashScreen(
-          logo: const Image(image: AssetImage("images/fond.png")),
+          logo: const Image(image: AssetImage("assets/fond.png")),
           backgroundColor: Colors.blue.shade800,
           logoSize: 300,
           navigator: const HomePage(),
@@ -36,8 +36,10 @@ class MyApp extends StatelessWidget {
             "Cargando...",
             style: TextStyle(
               fontSize: 27,
+              color: Color.fromARGB(255, 240, 92, 6),
             ),
           ),
+          loaderColor: const Color.fromARGB(255, 240, 92, 6),
         ),
       ),
     );
