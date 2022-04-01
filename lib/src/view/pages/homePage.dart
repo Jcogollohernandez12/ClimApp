@@ -151,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                             ".png"),
                       )
                     : const Image(
-                        image: AssetImage("images/sun.png"),
+                        image: AssetImage("assets/sun.png"),
                       ),
               ),
             ],
@@ -250,7 +250,7 @@ class _HomePageState extends State<HomePage> {
           width: 30,
           height: 30,
           child: FadeInImage(
-            placeholder: const AssetImage('images/loading.gif'),
+            placeholder: const AssetImage('assets/loading.gif'),
             image: NetworkImage(urlImage +
                 location.consolidatedWeather[index].weatherStateAbbr +
                 ".png"),
