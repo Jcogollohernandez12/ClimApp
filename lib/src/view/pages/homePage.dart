@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 _initialInfo(),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.08,
+                  height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 isData ? _anotherInfo() : _emptyContainer(),
               ],
